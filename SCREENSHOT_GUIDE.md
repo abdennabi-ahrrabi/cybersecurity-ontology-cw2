@@ -342,3 +342,216 @@ Or in Word (IEEE template):
 ---
 
 **After capturing all screenshots, delete the placeholder text blocks and insert the images with their captions!**
+
+---
+
+## 🔍 DL Query Testing Examples
+
+This section provides Description Logic (DL) queries you can execute in Protégé to test and demonstrate the ontology's reasoning capabilities.
+
+### How to Run DL Queries in Protégé
+
+1. Go to **Window → Tabs → DL Query**
+2. Make sure a reasoner is running (**Reasoner → HermiT** or **Pellet → Start reasoner**)
+3. Type or paste the query in the query editor
+4. Check the boxes for what you want to see (Instances, Subclasses, etc.)
+5. Click **Execute**
+
+---
+
+### Query 1: Find All High-Risk Assets
+**Query:**
+```
+HighRiskAsset
+```
+**Check:** ☑ Instances
+**Expected Result:** Assets with vulnerabilities having CVSS > 7.0 (e.g., WebServer_001)
+
+---
+
+### Query 2: Find All Critical Vulnerabilities
+**Query:**
+```
+Vulnerability and hasSeverity value "Critical"
+```
+**Check:** ☑ Instances
+**Expected Result:** Vulnerabilities marked as Critical severity
+
+---
+
+### Query 3: Find Assets Affected by SQL Injection
+**Query:**
+```
+Asset and isAffectedBy some SQLInjection
+```
+**Check:** ☑ Instances
+**Expected Result:** Assets that have SQL injection vulnerabilities
+
+---
+
+### Query 4: Find All Malware Threats
+**Query:**
+```
+Malware
+```
+**Check:** ☑ Instances ☑ Subclasses
+**Expected Result:** All malware instances and subclasses (Ransomware, Trojan, Worm, Virus, etc.)
+
+---
+
+### Query 5: Find Threats That Target Servers
+**Query:**
+```
+Threat and targets some Server
+```
+**Check:** ☑ Instances
+**Expected Result:** Threats that directly or indirectly target server assets
+
+---
+
+### Query 6: Find Unpatched Vulnerabilities with High CVSS
+**Query:**
+```
+Vulnerability and hasCVSS some xsd:float[>= 7.0] and not (isRemediatedBy some SecurityControl)
+```
+**Check:** ☑ Instances
+**Expected Result:** High-severity vulnerabilities without remediation controls
+
+---
+
+### Query 7: Find Assets with Network Vulnerabilities
+**Query:**
+```
+Asset and hasVulnerability some NetworkVulnerability
+```
+**Check:** ☑ Instances
+**Expected Result:** Assets affected by network-related vulnerabilities
+
+---
+
+### Query 8: Find All APT Threat Actors
+**Query:**
+```
+ThreatActor and initiates some AdvancedPersistentThreat
+```
+**Check:** ☑ Instances
+**Expected Result:** Threat actors associated with APT campaigns (e.g., APT29_Cozy_Bear)
+
+---
+
+### Query 9: Find Protected Critical Assets
+**Query:**
+```
+CriticalAsset and isProtectedBy some SecurityControl
+```
+**Check:** ☑ Instances
+**Expected Result:** Critical assets that have security controls protecting them
+
+---
+
+### Query 10: Find Web Application Vulnerabilities
+**Query:**
+```
+WebVulnerability or (Vulnerability and affects some WebApplication)
+```
+**Check:** ☑ Instances ☑ Subclasses
+**Expected Result:** All web-related vulnerabilities (XSS, CSRF, SQLi, etc.)
+
+---
+
+### Query 11: Find Ransomware Targeting Financial Assets
+**Query:**
+```
+Ransomware and targets some (Asset and ownedBy some FinancialOrganization)
+```
+**Check:** ☑ Instances
+**Expected Result:** Ransomware threats targeting financial sector assets
+
+---
+
+### Query 12: Find All Physical Security Controls
+**Query:**
+```
+PhysicalControl
+```
+**Check:** ☑ Instances ☑ Subclasses
+**Expected Result:** Physical security controls (CCTV, Access cards, etc.)
+
+---
+
+### Query 13: Find Exploited Vulnerabilities (Property Chain)
+**Query:**
+```
+Vulnerability and isExploitedBy some Threat
+```
+**Check:** ☑ Instances
+**Expected Result:** Vulnerabilities that have been exploited by threats
+
+---
+
+### Query 14: Find Assets Requiring Urgent Patching
+**Query:**
+```
+Asset and hasVulnerability some (Vulnerability and hasCVSS some xsd:float[>= 9.0])
+```
+**Check:** ☑ Instances
+**Expected Result:** Assets with critical vulnerabilities (CVSS >= 9.0) needing urgent attention
+
+---
+
+### Query 15: Complex Query - APT Attack Chain
+**Query:**
+```
+Asset and (isTargetedBy some (Threat and isInitiatedBy some NationStateActor))
+```
+**Check:** ☑ Instances
+**Expected Result:** Assets targeted by nation-state sponsored threats
+
+---
+
+### 📸 SCREENSHOT 9: DL Query Execution (Optional)
+
+**Location in Report**: Section 10.4 (Inference Testing) or Appendix
+
+**How to Capture**:
+1. In Protégé, go to **Window → Tabs → DL Query**
+2. Paste Query 1: `HighRiskAsset`
+3. Check ☑ Instances
+4. Click **Execute**
+5. Take screenshot showing:
+   - The query in the editor
+   - Results showing inferred instances
+6. Save as `screenshot9_dl_query.png`
+
+**Figure Caption**:
+```
+Figure 9: DL Query execution showing instances of HighRiskAsset inferred by the reasoner
+```
+
+---
+
+### DL Query Syntax Reference
+
+| Syntax | Meaning | Example |
+|--------|---------|---------|
+| `ClassName` | All instances of class | `Malware` |
+| `and` | Intersection | `Asset and hasVulnerability some Vulnerability` |
+| `or` | Union | `Server or Workstation` |
+| `not` | Complement | `not HighRiskAsset` |
+| `some` | Existential restriction | `exploits some Vulnerability` |
+| `only` | Universal restriction | `hasVulnerability only CriticalVulnerability` |
+| `value` | Has specific value | `hasSeverity value "Critical"` |
+| `min N` | Minimum cardinality | `hasVulnerability min 2 Vulnerability` |
+| `max N` | Maximum cardinality | `hasVulnerability max 5 Vulnerability` |
+| `exactly N` | Exact cardinality | `hasVulnerability exactly 1 Vulnerability` |
+
+---
+
+### Tips for DL Queries
+
+- **Always start the reasoner** before running DL queries (Reasoner → Start reasoner)
+- **Use HermiT** for basic class queries (faster)
+- **Use Pellet** when you need SWRL rule inferences
+- **Check "Direct" boxes** to see only direct (not inherited) results
+- **Combine queries** using `and` and `or` for complex searches
+- Queries are **case-sensitive** - use exact class/property names from your ontology

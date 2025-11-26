@@ -382,10 +382,10 @@ Vulnerability and hasSeverity value "Critical"
 ### Query 3: Find Assets Affected by SQL Injection
 **Query:**
 ```
-Asset and isAffectedBy some SQLInjection
+Asset and hasVulnerability some SQLInjection
 ```
 **Check:** ☑ Instances
-**Expected Result:** Assets that have SQL injection vulnerabilities
+**Expected Result:** Assets that have SQL injection vulnerabilities (SQLInjection is now correctly classified under SoftwareVulnerability)
 
 ---
 
@@ -452,10 +452,20 @@ CriticalAsset and isProtectedBy some SecurityControl
 ### Query 10: Find Web Application Vulnerabilities
 **Query:**
 ```
-WebVulnerability or (Vulnerability and affects some WebApplication)
+SoftwareVulnerability and affects some WebApplication
 ```
 **Check:** ☑ Instances ☑ Subclasses
-**Expected Result:** All web-related vulnerabilities (XSS, CSRF, SQLi, etc.)
+**Expected Result:** All software vulnerabilities affecting web applications (including CrossSiteScripting, CSRF, SQLInjection, XXEInjection, PathTraversal - all now correctly classified under SoftwareVulnerability)
+
+---
+
+### Query 10b: Verify Injection Vulnerabilities Classification
+**Query:**
+```
+SQLInjection or CrossSiteScripting or CSRF or XXEInjection
+```
+**Check:** ☑ Superclasses
+**Expected Result:** Should show SoftwareVulnerability and Vulnerability as superclasses (verifies correct reclassification from former Threat hierarchy)
 
 ---
 

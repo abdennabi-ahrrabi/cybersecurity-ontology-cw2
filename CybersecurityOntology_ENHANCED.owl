@@ -3167,28 +3167,22 @@
     <!-- http://www.semanticweb.org/ontologies/cybersecurity#CSRF -->
 
     <owl:Class rdf:about="http://www.semanticweb.org/ontologies/cybersecurity#CSRF">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/cybersecurity#Threat"/>
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/cybersecurity#WebThreat"/>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/cybersecurity#Vulnerability"/>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/cybersecurity#SoftwareVulnerability"/>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/cybersecurity#exploits"/>
-                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/ontologies/cybersecurity#Vulnerability"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/cybersecurity#targets"/>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/cybersecurity#affects"/>
                 <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/ontologies/cybersecurity#Asset"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/cybersecurity#hasSeverity"/>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/cybersecurity#hasCVSS"/>
                 <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
-                <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+                <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#decimal"/>
             </owl:Restriction>
         </rdfs:subClassOf>
-        <rdfs:comment>Attack that tricks user into executing unwanted actions on web application</rdfs:comment>
+        <rdfs:comment>Vulnerability allowing attackers to trick users into executing unwanted actions on web applications (CWE-352)</rdfs:comment>
         <rdfs:label>Cross-Site Request Forgery (CSRF)</rdfs:label>
     </owl:Class>
     
@@ -3556,28 +3550,22 @@
     <!-- http://www.semanticweb.org/ontologies/cybersecurity#CrossSiteScripting -->
 
     <owl:Class rdf:about="http://www.semanticweb.org/ontologies/cybersecurity#CrossSiteScripting">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/cybersecurity#Threat"/>
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/cybersecurity#WebThreat"/>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/cybersecurity#Vulnerability"/>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/cybersecurity#SoftwareVulnerability"/>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/cybersecurity#exploits"/>
-                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/ontologies/cybersecurity#Vulnerability"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/cybersecurity#targets"/>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/cybersecurity#affects"/>
                 <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/ontologies/cybersecurity#Asset"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/cybersecurity#hasSeverity"/>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/cybersecurity#hasCVSS"/>
                 <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
-                <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+                <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#decimal"/>
             </owl:Restriction>
         </rdfs:subClassOf>
-        <rdfs:comment>Injection attack that executes malicious scripts in victim&apos;s browser</rdfs:comment>
+        <rdfs:comment>Vulnerability allowing injection of malicious scripts into web pages viewed by other users (CWE-79)</rdfs:comment>
         <rdfs:label>Cross-Site Scripting (XSS)</rdfs:label>
     </owl:Class>
     
@@ -5737,27 +5725,23 @@
     <!-- http://www.semanticweb.org/ontologies/cybersecurity#PathTraversal -->
 
     <owl:Class rdf:about="http://www.semanticweb.org/ontologies/cybersecurity#PathTraversal">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/cybersecurity#Threat"/>
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/cybersecurity#WebThreat"/>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/cybersecurity#Vulnerability"/>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/cybersecurity#SoftwareVulnerability"/>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/cybersecurity#exploits"/>
-                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/ontologies/cybersecurity#Vulnerability"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/cybersecurity#targets"/>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/cybersecurity#affects"/>
                 <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/ontologies/cybersecurity#Asset"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/cybersecurity#hasSeverity"/>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/cybersecurity#hasCVSS"/>
                 <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
-                <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+                <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#decimal"/>
             </owl:Restriction>
         </rdfs:subClassOf>
+        <rdfs:comment>Vulnerability allowing unauthorized access to files outside the web root directory (CWE-22)</rdfs:comment>
+        <rdfs:label>Path Traversal</rdfs:label>
     </owl:Class>
     
 
@@ -6216,28 +6200,22 @@
     <!-- http://www.semanticweb.org/ontologies/cybersecurity#RemoteCodeExecution -->
 
     <owl:Class rdf:about="http://www.semanticweb.org/ontologies/cybersecurity#RemoteCodeExecution">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/cybersecurity#Threat"/>
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/cybersecurity#WebThreat"/>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/cybersecurity#Vulnerability"/>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/cybersecurity#SoftwareVulnerability"/>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/cybersecurity#exploits"/>
-                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/ontologies/cybersecurity#Vulnerability"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/cybersecurity#targets"/>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/cybersecurity#affects"/>
                 <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/ontologies/cybersecurity#Asset"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/cybersecurity#hasSeverity"/>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/cybersecurity#hasCVSS"/>
                 <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
-                <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+                <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#decimal"/>
             </owl:Restriction>
         </rdfs:subClassOf>
-        <rdfs:comment>Vulnerability allowing attacker to execute arbitrary code remotely</rdfs:comment>
+        <rdfs:comment>Vulnerability allowing attacker to execute arbitrary code remotely (CWE-94)</rdfs:comment>
         <rdfs:label>Remote Code Execution</rdfs:label>
     </owl:Class>
     
@@ -6371,28 +6349,22 @@
     <!-- http://www.semanticweb.org/ontologies/cybersecurity#SQLInjection -->
 
     <owl:Class rdf:about="http://www.semanticweb.org/ontologies/cybersecurity#SQLInjection">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/cybersecurity#Threat"/>
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/cybersecurity#WebThreat"/>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/cybersecurity#Vulnerability"/>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/cybersecurity#SoftwareVulnerability"/>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/cybersecurity#exploits"/>
-                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/ontologies/cybersecurity#Vulnerability"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/cybersecurity#targets"/>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/cybersecurity#affects"/>
                 <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/ontologies/cybersecurity#Asset"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/cybersecurity#hasSeverity"/>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/cybersecurity#hasCVSS"/>
                 <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
-                <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+                <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#decimal"/>
             </owl:Restriction>
         </rdfs:subClassOf>
-        <rdfs:comment>Code injection attack targeting SQL databases</rdfs:comment>
+        <rdfs:comment>Vulnerability allowing injection of malicious SQL code into database queries (CWE-89)</rdfs:comment>
         <rdfs:label>SQL Injection</rdfs:label>
     </owl:Class>
     
@@ -6821,27 +6793,23 @@
     <!-- http://www.semanticweb.org/ontologies/cybersecurity#SessionHijacking -->
 
     <owl:Class rdf:about="http://www.semanticweb.org/ontologies/cybersecurity#SessionHijacking">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/cybersecurity#NetworkThreat"/>
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/cybersecurity#Threat"/>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/cybersecurity#Vulnerability"/>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/cybersecurity#SoftwareVulnerability"/>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/cybersecurity#exploits"/>
-                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/ontologies/cybersecurity#Vulnerability"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/cybersecurity#targets"/>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/cybersecurity#affects"/>
                 <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/ontologies/cybersecurity#Asset"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/cybersecurity#hasSeverity"/>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/cybersecurity#hasCVSS"/>
                 <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
-                <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+                <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#decimal"/>
             </owl:Restriction>
         </rdfs:subClassOf>
+        <rdfs:comment>Vulnerability in session management allowing unauthorized access to user sessions (CWE-384)</rdfs:comment>
+        <rdfs:label>Session Hijacking</rdfs:label>
     </owl:Class>
     
 
@@ -8011,27 +7979,23 @@
     <!-- http://www.semanticweb.org/ontologies/cybersecurity#XXEInjection -->
 
     <owl:Class rdf:about="http://www.semanticweb.org/ontologies/cybersecurity#XXEInjection">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/cybersecurity#Threat"/>
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/cybersecurity#WebThreat"/>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/cybersecurity#Vulnerability"/>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/cybersecurity#SoftwareVulnerability"/>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/cybersecurity#exploits"/>
-                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/ontologies/cybersecurity#Vulnerability"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/cybersecurity#targets"/>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/cybersecurity#affects"/>
                 <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/ontologies/cybersecurity#Asset"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/cybersecurity#hasSeverity"/>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/cybersecurity#hasCVSS"/>
                 <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
-                <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+                <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#decimal"/>
             </owl:Restriction>
         </rdfs:subClassOf>
+        <rdfs:comment>Vulnerability allowing XML External Entity injection attacks (CWE-611)</rdfs:comment>
+        <rdfs:label>XXE Injection</rdfs:label>
     </owl:Class>
     
 

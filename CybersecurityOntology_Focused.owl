@@ -26,7 +26,6 @@ This ontology supports:
 
 Domain Focus: Enterprise Network Security Incident Response</dc:description>
         <dc:title>Cybersecurity Incident Response Ontology</dc:title>
-        <rdfs:comment>MSc Coursework - Knowledge Graphs Module. This ontology models a realistic ransomware attack scenario against a healthcare organization, demonstrating threat detection, incident response, and remediation workflows.</rdfs:comment>
     </owl:Ontology>
 
     <!-- ============================================== -->
